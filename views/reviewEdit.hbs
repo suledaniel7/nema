@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Review</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/notifsEdit.css">
+</head>
+<body>
+    <a href="/profile">Back to Profile Page</a>
+    <form class="form form-horizontal" role="form" onsubmit="return validate();" action="/edit/update/review/{{uid}}" method="post">
+        <textarea name="review" id="notif">{{review}}</textarea>
+        <div id="buttons">
+            <button class="btn btn-default" id="cancel" type="reset">Reset</button>
+            <button class="btn btn-default" id="submit" type="submit">Update</button>
+        </div>
+    </form>
+    <script>
+        function validate(){
+            var text = document.getElementById('notif').value;
+            var wsp = /^\s*$/;
+            if(wsp.test(text)){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

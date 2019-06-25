@@ -1,0 +1,151 @@
+.container-fluid {
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+}
+
+#sidebar, #centerRow, #rightBar {
+    text-align: center;
+}
+
+#centerRow {
+    border-left: 2px solid #99D3DF;
+}
+
+#rightBar {
+    border-left: 2px solid #99D3DF;
+}
+
+#thumbnailPic {
+    border-radius: 50%;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#icons img {
+    width: 20px;
+    margin: 10px;
+}
+
+#icons div {
+    display: inline;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+#followBtn {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: larger;
+    background-color: rgb(223, 246, 250);
+}
+
+#followBtn:hover {
+    background-color: #99D3DF;
+}
+
+#followBtn a:hover {
+    color: white;
+}
+
+#foll {
+    font-weight: bold;
+}
+
+#buttonDiv {
+    text-align: right;
+    margin-top: 10px;
+}
+
+textarea {
+    min-height: 8em;
+}
+
+#pushBtn {
+    width: 70px;
+    border-radius: 25%;
+    background-color: rgb(223, 246, 250);
+}
+
+#pushBtn:hover {
+    background-color: #99D3DF;
+    color: white;
+}
+
+#previous, #review {
+    text-align: left;
+    background-color: #EDEDED;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#previous h5, #review h5 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#reviewSub {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#revError {
+    color: yellowgreen;
+}
+
+#revError a {
+    color: rgb(113, 148, 8);
+}
+
+#btnDiv {
+    text-align: right;
+}
+
+#reviewBtn {
+    border-radius: 25%;
+    background-color: rgb(223, 246, 250);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#reviewBtn:hover {
+    background-color: #99D3DF;
+    color: white;
+}
+
+#review h6, #reviews h6 {
+    color: grey;
+}
+
+#centerRow, #rightBar {
+    padding-left: 2%;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+nav ul li a:hover, #followBtn a:hover {
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+}

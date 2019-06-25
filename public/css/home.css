@@ -1,0 +1,86 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#smallLogo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 5px;
+}
+
+nav, header{
+    background-color: #EEEDED;
+}
+
+#container-fluid {
+    background-color: #EEEDED;
+}
+
+nav ul {
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    padding: 5px;
+}
+
+nav ul li:hover {
+    background-color: rgb(153, 255, 255);
+}
+
+nav ul li a {
+    color: inherit;
+}
+
+hr {
+    visibility: hidden;
+    margin-top: 60px;
+}
+
+/* #logoContainer {
+    margin-top: 40px;
+} */
+
+#logo {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#searchBox {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#searchBox:focus {
+    outline: none;
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #EEEDED;
+}

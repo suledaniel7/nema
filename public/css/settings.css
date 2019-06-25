@@ -1,0 +1,111 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #E9E9E9;
+}
+
+img {
+    width: 100%;
+}
+
+#sidebar {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #CDCDCD;
+}
+
+#proPic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+#icons img {
+    width: 20px;
+    margin: 10px;
+}
+
+#icons div {
+    display: inline;
+}
+
+#searchDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#searchDiv form input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+#searchBox {
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+#searchBox:focus {
+    outline: none;
+}
+
+h4, h5 {
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+#main {
+    padding-top: 20px;
+}
+
+#label {
+    text-align: right;
+}
+
+.panel-heading:hover {
+    background-color: #99D3DF;
+    color: white;
+    /* outline: solid #66B9BF; */
+}
+
+.panel-heading a h5:hover {
+    color: white;
+}
+
+#heading:hover {
+    text-decoration: none;
+}
+
+#decision {
+    text-align: center;
+}
+
+#decision button {
+    margin: 10px;
+}
+
+#update:hover {
+    background-color: #99D3DF;
+    color: white;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+    background-color: #E9E9E9;
+}

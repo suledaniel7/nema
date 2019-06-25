@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{username}}'s Nema Profile</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #smallLogo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 5px;
+        }
+
+        nav, header{
+            background-color: #EEEDED;
+        }
+
+        #container-fluid {
+            background-color: #EEEDED;
+        }
+
+        nav ul {
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 5px;
+        }
+
+        nav ul li:hover {
+            background-color: rgb(153, 255, 255);
+        }
+
+        nav ul li a {
+            color: inherit;
+        }
+
+        hr {
+            visibility: hidden;
+            margin-top: 60px;
+        }
+
+        #sidebar {
+            width: 100px;
+            position: fixed;
+            background-color: rgb(153, 255, 255);
+        }
+
+        #proPic {
+            width: 200px;
+            padding: 10px;
+            border-radius: 100px;
+            background-color: #EEEDED;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #proPic img {
+            width: 150px;
+            height: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        #figCap {
+            width: 200px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #edit img {
+            width: 15px;
+            margin-left: 5px;
+        }
+
+        #noActiv {
+            color: grey;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            margin-top: 100px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #smallLogo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 5px;
+        }
+
+        nav, header{
+            background-color: #EEEDED;
+        }
+
+        #container-fluid {
+            background-color: #EEEDED;
+        }
+
+        nav ul {
+            text-align: right;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 5px;
+        }
+
+        nav ul li:hover {
+            background-color: rgb(153, 255, 255);
+        }
+
+        nav ul li a {
+            color: inherit;
+        }
+
+        hr {
+            visibility: hidden;
+            margin-top: 60px;
+        }
+
+        #sidebar {
+            width: 100px;
+            position: fixed;
+            background-color: rgb(153, 255, 255);
+        }
+
+        #proPic {
+            width: 200px;
+            padding: 10px;
+            border-radius: 100px;
+            background-color: #EEEDED;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #proPic img {
+            width: 150px;
+            height: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        #figCap {
+            width: 200px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #edit img {
+            width: 15px;
+            margin-left: 5px;
+        }
+
+        #noActiv {
+            color: grey;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            margin-top: 100px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container-fluid" class="nav navbar-default">
+        <header class="container-fluid">
+            <figure>
+                <a href="/"><img id="smallLogo" src="/img/logo-small.png" alt="Nema Logo"></a>
+            </figure>
+            <nav class="nav navbar-right">
+                <ul class="nav navbar-nav col-md-12">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/signin">Sign in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <hr>
+    <figure id="proPic">
+        <img src="{{proPicPath}}" alt="{{username}}'s Profile Photo">
+    </figure>
+    <div id="figCap">{{username}}<a href="/edit/profile-photo"><span id="edit"><img title="Edit Profile Photo" src="/img/png/edit.png" alt="Edit Profile Photo"></span></a></div>
+    <br />
+    <section id="main">
+        {{!-- <h4 id="noActiv">{{noActivity}}</h4> --}}
+        <ul class="nav nav-pills nav-stacked" id="sidebar">
+            <li class="active"><a href="#">History</a></li>
+            <li><a href="#">Consultation</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <article>
+            <h4>University of Jos</h4>
+            <div id="intCont">
+                The University of Jos is a Federal Government owned University in Jos, Plateau State. The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+        </article>
+        <article>
+            <h4>University of Jos</h4>
+            <div id="intCont">
+                The University of Jos is a Federal Government owned University in Jos, Plateau State. The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+                The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+        </article>
+        
+
+        {{#each interests}}
+            {{!-- Code goes here --}}
+        {{/each}}
+    </section>
+    <footer>
+        Nema &copy; 2017
+    </footer>
+</body>

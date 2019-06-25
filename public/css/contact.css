@@ -1,0 +1,94 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#smallLogo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 5px;
+}
+
+nav, header{
+    background-color: #EEEDED;
+}
+
+#container-fluid {
+    background-color: #EEEDED;
+}
+
+nav ul {
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    padding: 5px;
+}
+
+nav ul li:hover {
+    background-color: rgb(153, 255, 255);
+}
+
+nav ul li a {
+    color: inherit;
+}
+
+hr {
+    visibility: hidden;
+    margin-top: 60px;
+}
+
+form {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#password {
+    width: 100%;
+    max-width: 100%;
+    height: 5em;
+    max-height: 5em;
+}
+
+#submit {
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#submit:hover {
+    border: 1px solid black;
+    background-color: rgb(153, 255, 255);
+}
+
+h4 {
+    text-align: center;
+    color: red;
+}
+
+h5 {
+    text-align: center;
+    color: wheat;
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 100px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

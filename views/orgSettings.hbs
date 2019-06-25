@@ -1,0 +1,223 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Your Organisation's Profile</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/settings.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <section id="sidebar" class="col-md-12 col-sm-12">
+            <figure id="proPicFig">
+                <img src="/{{thumbnail_path}}" id="proPic" alt="{{username}}'s Profile Photo">
+                <figcaption>
+                    <br>
+                    <a href="/organisation/profile">{{username}}</a>
+                    <br>
+                    Joined {{date_created}}
+                </figcaption>
+            </figure>
+            <div id="icons">
+                <div class="dropup">
+                    <img src="/img/png/notifs.png" class="dropdown-toggle" data-toggle="dropdown" alt="Notifications" title="Your Notifications">
+                    <ul class="dropdown-menu">
+                        <li>&nbsp;All Caught Up</li>
+                    </ul>
+                </div>
+            </div>
+            {{!-- <div id="searchDiv" class="col-md-6">
+                <form action="/search" onsubmit="return validate();" method="get">
+                    <input type="search"  name="query" placeholder="Search Nema" id="searchBox">
+                </form>
+            </div> --}}
+        </section>
+        <section id="main" class="col-md-12 col-sm-12">
+            <h4>Edit Your Organisation Profile</h4>
+            <h5>Edit any of the fields below to update your organisation's profile</h5>
+            <h5 class="error">{{error}}</h5>
+            <form action="organisation-update" enctype="multipart/form-data" role="form" class="form-horizontal" onsubmit="return validation();" method="post">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" id="heading" data-parent="#accordion" href="#collapse1"><h5 class="panel-title">Organisation Details</h5></a>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapse1">
+                            <div class="panel-body">
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <div id="label" class="col-md-2 col-sm-2">
+                                        <label class="control-label" for="uName">*Username:</label>
+                                    </div>
+                                    <div class="col-md-10 col-sm-10">
+                                        <input type="text" class="form-control" value="{{username}}" name="username" id="uName">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="email">*Email Address:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="email" class="form-control" value="{{email}}" name="email" id="email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="fName">*Organisation Name:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control col-md-10" value="{{name}}" name="orgName" id="fName">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="lName">*Location:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" value="{{location}}" name="location" id="lName">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="phNumber">*Phone Number:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" value="{{phone_number}}" name="phone_number" id="phNumber">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="bio">*Bio:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <textarea name="bio" id="bio" class="form-control">{{bio}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="descr">*Search Engine Keywords:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" value="{{description}}" name="description" id="descr">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="col-md-2" id="label">
+                                        <label for="proPicture" class="control-label">Change Thumbnail Photo:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="file" name="thumbnail_photo" id="proPicture" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="#collapse2" id="heading" data-toggle="collapse" data-parent="#accordion"><h5 class="panel-title">Password</h5></a>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapse2">
+                            <div class="panel-body">
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="pWord">Password:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="password" class="form-control" name="password" id="pWord">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div id="label" class="col-md-2">
+                                        <label class="control-label" for="pWord1">Confirm Password:</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="password" class="form-control" name="pWord1" id="pWord1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{!-- <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="#collapse3" id="heading" data-toggle="collapse" data-parent="#accordion"><h5 class="panel-title">Interests</h5></a>
+                        </div>
+                        <div class="panel-collapse collapse" id="collapse3">
+                            <div class="panel-body">
+                                <span>Automatically suggest content based on my interests</span>
+                                <br>
+                                <label for="radio1" class="radio-inline"><input type="radio" name="autoSugg" value="yes" id="radio1">Yes</label>
+                                <label for="radio2" class="radio-inline"><input type="radio" name="autoSugg" value="no" id="radio2">No</label>
+                            </div>
+                        </div>
+                    </div> --}}
+                </div>
+                <div class="col-md-12" id="decision">
+                    <button class="btn btn-default" id="reset" type="reset">Cancel</button>
+                    <button class="btn btn-default" id="update" type="submit">Update Account</button>
+                </div>
+            </form>
+        </section>
+        <footer class="col-md-12 navbar-static-bottom col-sm-12">
+            <div class="row">
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                        <li><a href="/signin">Sign In</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/organisation">Organisations</a></li>
+                        <li><a href="/tos">Terms&nbsp;of&nbsp;Service</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                Nema &copy; 2017
+            </div>
+        </footer>
+    </div>
+    <script>
+        
+        function validation(){
+            var getNode = function(s){
+                return document.querySelector(s);
+            },
+            wsp = /^\s*$/,
+            uName = getNode('#uName').value,
+            email = getNode('#email').value,
+            fName = getNode('#fName').value,
+            lName = getNode('#lName').value,
+            pWord = getNode('#pWord').value,
+            pWord1 = getNode('#pWord1').value;
+
+            if(wsp.test(uName)|| wsp.test(email) || wsp.test(fName) || wsp.test(lName)){
+                alert('Fields marked * are required');
+                return false;
+            }
+            else if(pWord !== '' || pWord1 !== ''){
+                if(wsp.test(pWord) || wsp.test(pWord1)){
+                    alert("Your password cannot contain whitespace only");
+                    return false;
+                }
+                else if(pWord !== pWord1){
+                    alert("Your passwords do not match");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else if(pWord !== pWord1){
+                alert("Your passwords do not match");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+</body>

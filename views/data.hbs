@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Past Data</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/data.css">
+</head>
+<body>
+    <a href="/organisation/profile"><h5>Back to Profile Page</h5></a>
+    <section>
+        <h3>{{name}}</h3>
+        <h3>{{message}}</h3>
+        <div class="container">
+            <h4>{{title}}</h4>
+            <div class="row">
+                {{#each percentages}}
+                <div class="col-md-4">
+                    <h5>{{name}}</h5>
+                    {{#each percentages}}
+                        <div id="perc">
+                            <span id="percTitle">{{title}}</span>: <span id="percValue">{{percentage}}</span>
+                        </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+            
+        </div>
+        
+    </section>
+    <div class="container-fluid">
+        <footer class="col-md-12 navbar-static-bottom col-sm-12">
+            <div class="row">
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                        <li><a href="/signin">Sign In</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/organisation">Organisations</a></li>
+                        <li><a href="/tos">Terms&nbsp;of&nbsp;Service</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                Nema &copy; 2017
+            </div>
+        </footer>
+    </div>
+</body>

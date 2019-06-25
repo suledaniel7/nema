@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <div id="container-fluid" class="nav navbar-default">
+        <header class="container-fluid">
+            <figure>
+                <a href="/"><img id="smallLogo" src="/img/logo-small.png" alt="Nema Logo"></a>
+            </figure>
+            <nav class="nav navbar-right">
+                <ul class="nav navbar-nav col-md-12">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/signin">Sign in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <hr>
+    <section>
+        <form onsubmit="return validate();" role="form" class="form-vertical" action="upload" enctype="multipart/form-data" method="post">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>Create an Organisation Account</h3>
+                    <h4>{{error}}</h4>
+                    <h5>{{message}}</h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="name">Organisation Name:</label>
+                            <input type="text" class="form-control" required="required" name="orgName" placeholder="Enter Organisation name" id="name">
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" required="required" name="username" id="username" placeholder="Create a unique username for logging in">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="email">Email Address:</label>
+                            <input type="email" class="form-control" required="required" name="email" id="email" placeholder="Enter the Organisation Email Address">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="location">Organisation Location:</label>
+                            <input type="text" class="form-control" required="required" name="location" id="location" placeholder="Enter the Organisation Location">
+                        </div>
+                    </div>
+                    <br>     
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="number">Phone Number:</label>
+                            <input type="tel" class="form-control" required="required" name="number" id="number" placeholder="Enter the Organisation Phone Number">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password">Create Password:</label>
+                            <input type="password" class="form-control" required="required" name="password" id="password" placeholder="Create a password for logging in">
+                        </div>
+                     </div>
+                     <br>
+                     <div class="row">
+                        <div class="col-md-6">
+                            <label for="password1">Confirm Password:</label>
+                            <input type="password" class="form-control" required="required" name="password1" id="password1" placeholder="Confirm your password">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="sector">Select the Sector you fall under:</label>
+                            <select name="sector" class="form-control" required="required" id="sector">
+                                <option value="Agriculture">Agriculture</option>
+                                <option value="Education">Education</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Industry">Industry</option>
+                            </select>
+                        </div>   
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="description">Relevant Search Terms:</label>
+                            <input type="text" class="form-control" required="required" name="description" id="description" placeholder="Enter search terms that describe your organisation">
+                        </div>
+                    </div>  <br>   
+                    <div class="row">
+                         <div class="col-md-12">
+                            <label for="pic">Upload a Thumbnail Photo:</label>
+                            <input type="file" class="form-control" required="required" name="picture" id="pic">
+                        </div>
+                    </div>  <br>   
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="bio">Company Bio:</label>
+                            <textarea name="bio" class="form-control" id="bio" placeholder="Enter a description of your organisation visible on the search page"></textarea>
+                        </div>
+                    </div><br>
+                    <button type="submit" id="submit" class="btn btn-default">Add Organisation to Database</button>
+                </div>
+                
+            </div>
+            
+        </form>
+    </section>
+    <footer>
+        Nema &copy; 2017
+    </footer>
+    <script>
+        function validate(){
+            var username = document.getElementById('username').value,
+                password = document.getElementById('password').value,
+                orgName = document.getElementById('name').value,
+                email = document.getElementById('email').value,
+                location = document.getElementById('location').value,
+                phNumber = document.getElementById('number').value,
+                password1 = document.getElementById('password1').value,
+                sector = document.getElementById('sector'),
+                description = document.getElementById('description');
+            let whitespacePattern = /^\s*$/;
+            if(whitespacePattern.test(username) || whitespacePattern.test(password)){
+                alert("All fields are required");
+                return false;
+            }
+            else if(password !== password1){
+                alert("Your passwords do not match!");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+</body>

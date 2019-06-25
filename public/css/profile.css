@@ -1,0 +1,131 @@
+img {
+    width: 100%;
+}
+
+#sidebar {
+    text-align: center;
+    background-color: #99D3DF;
+    padding-bottom: 10px;
+}
+
+#smallLogo {
+    width: 80px;
+    margin-top: 5px;
+}
+
+#proPic {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 50%;
+    background-color: #CDCDCD;
+}
+
+#icons img {
+    width: 20px;
+    margin: 10px;
+}
+
+#icons div {
+    display: inline;
+}
+
+#searchDiv {
+    text-align: center;
+}
+
+#searchDiv form input {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#searchBox {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+#searchBox:focus {
+    outline: none;
+}
+
+#submitBtn {
+    margin-top: 10px;
+    height: 3em;
+}
+
+.success {
+    color: green;
+    text-align: center;
+}
+
+#noActiv {
+    text-align: center;
+    color: grey;
+}
+
+.post{
+    background-color: #E9E9E9;
+    border-radius: 10px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.post h6 {
+    color: grey;
+}
+
+#options {
+    width: 20px;
+    float: right;
+}
+
+.dropdown{
+    width: 100%;
+}
+
+.dropdown-menu {
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+
+#noRev {
+    font-size: larger;
+    text-align: center;
+    color: grey;
+}
+
+#review {
+    text-align: left;
+    background-color: #EDEDED;
+    border-radius: 10px;
+    padding: 5px;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+#review h5 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#reviews h4 {
+    color: grey;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}

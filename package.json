@@ -1,0 +1,29 @@
+{
+  "name": "nema",
+  "version": "1.0.0",
+  "description": "Nema is a Research Database Management system aimed at giving the everyone from startups to established organisations including members of the public who have little technological expertise a platform from which their story can be told to an online audience",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": [
+    "express",
+    "body-parser",
+    "multer",
+    "express-handlebars",
+    "mongoose",
+    "client-sessions",
+    "xlsx-to-json",
+    "password-hash"
+  ],
+  "keywords": [
+    "nema",
+    "search",
+    "research",
+    "database",
+    "platform"
+  ],
+  "author": "Nema Team (Group 1)",
+  "license": "ISC"
+}

@@ -1,0 +1,90 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#smallLogo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 5px;
+}
+
+nav, header {
+    background-color: #EEEDED;
+}
+
+nav ul {
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    padding: 5px;
+}
+
+nav ul li:hover {
+    background-color: rgb(153, 255, 255);
+}
+
+nav ul li a {
+    color: inherit;
+}
+
+#searchCont {
+    margin-top: 100px;
+}
+
+#searchBox {
+    width: 400px;
+    margin-top: 10px;
+    height: 2.5em;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#searchBox:focus {
+    outline: none;
+}
+
+#corrections {
+    text-align: center;
+    color: rgb(12, 224, 154);
+}
+
+#result {
+    border-bottom: 2px solid rgb(153, 255, 255);
+    padding: 5px;
+}
+
+#resLink {
+    text-decoration: none;
+    color: black;
+}
+
+#resLink h4 {
+    color: red;
+}
+
+#result:hover {
+    background-color: rgb(153, 255, 255);
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 100px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

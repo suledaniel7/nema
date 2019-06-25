@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{name}}'s Profile Page</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/orgProfile.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-2" id="sidebar">
+            <img src="/{{proPicPath}}" id="thumbnailPic" alt="{{name}}'s thumbnail Photo">
+            <figcaption>{{name}}
+                <br>
+                <br>
+                @{{username}}
+            </figcaption>
+            <br>
+            <div id="icons">
+                <div>
+                    <a href="/edit/org"><img src="/img/png/settings.png" alt="Profile Settings" title="Settings"></a>
+                </div>
+                <div>
+                    <img src="/img/png/notifs.png" id="notifs" alt="Notifications" title="Notifications">
+                </div>
+            </div>
+            <section>
+                Followers: <span id="foll">{{followersNo}}</span><br><br>
+                <a href="upload-data">Upload Data</a>
+                <br><br>
+                <a href="past-data">View Past Data</a>
+            </section>
+        </div>
+        <div class="col-md-6" id="centerRow">
+            <h4>Push Notifications</h4>
+            <h5 class="error">{{error}}</h5>
+            <h5 class="success">{{success}}</h5>
+            <form action="/push" onsubmit="return validate();" class="form-vertical" method="post">
+                <textarea name="push" id="push" class="form-control"></textarea>
+                <div id="buttonDiv">
+                    <button type="submit" id="pushBtn" class=" btn btn-default">Push</button>
+                </div>
+            </form>
+            <br>
+            {{#each notifications}}
+            <div id="previous">
+            <h5>{{date}}, {{time}}</h5>
+            {{text}}
+            <div class="dropup">
+                <img title="Options" class="dropdown-toggle" data-toggle="dropdown" id="options" src="/img/png/ellipsis.png" alt="Options">
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="/edit/notifications/{{uid}}">Edit</a></li>
+                    <li><a onclick="return check();" href="/delete/notifications/{{uid}}">Delete</a></li>
+                </ul>
+            </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col-md-4" id="rightBar">
+            <h4>Reviews</h4>
+            <div id="reviews">
+                <h4>{{noReviews}}</h4>
+                {{#each reviews}}
+                <div id="review">
+                    <h5>{{name}}</h5>
+                    <h6>{{date}}&nbsp;{{time}}</h6>
+                    {{review}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <footer class="col-md-12 navbar-static-bottom col-sm-12">
+        <div class="row">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                    <li><a href="/signin">Sign In</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/organisation">Organisations</a></li>
+                    <li><a href="/tos">Terms&nbsp;of&nbsp;Service</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            Nema &copy; 2017
+        </div>
+    </footer>
+    <script>
+        function validate(){
+            var textarea = document.getElementById('push').value;
+            var wsp = /^\s*$/;
+
+            if(wsp.test(textarea)){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function check(){
+            if(confirm("Are you sure you want to delete?")){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
